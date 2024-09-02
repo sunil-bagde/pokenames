@@ -1,0 +1,14 @@
+{
+  "name": "poke-names",
+  "version": "1.0.0",
+  "description": "Get pokemon name",
+  "main": "src/index.cjs",
+  "type": "module",
+  "repository": "git@github.com:sunil-bagde/pokenames.git",
+  "author": "Sunil Bagde <bagdesunil786@gmail.com> (https://sunil-bagde.github.io)",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "unique-random-array": "4.0.0"
+  }
+}
