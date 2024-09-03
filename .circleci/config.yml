@@ -24,4 +24,4 @@ workflows:
                 - 20.14.0
       - release:
           requires:
-            - node/test
+            - node/test 
