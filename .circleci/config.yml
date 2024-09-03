@@ -21,7 +21,7 @@ workflows:
           matrix:
             parameters:
               version:
-                - 16.1.0
+                - 20.14.0
           pkg-manager: yarn
       - release:
           requires:
