@@ -1,20 +1,20 @@
 version: 2.1
 orbs:
   node: circleci/node@4.5
+
 jobs:
   release:
     executor: node/default
-
     steps:
       - checkout
-      - node/install-packages # Install and automatically cache packages
+      - node/install-packages:
+          pkg-manager: npm # Specify the package manager
       # Run optional required steps before releasing
       # - run: npm run build-script
       - run: npx semantic-release
 
 workflows:
   test_and_release:
- 
     # Run the test jobs first, then the release only when all the test jobs are successful
     jobs:
       - node/test:
@@ -22,7 +22,6 @@ workflows:
             parameters:
               version:
                 - 20.14.0
-          pkg-manager: yarn
       - release:
           requires:
             - node/test
