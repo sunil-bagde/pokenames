@@ -7,8 +7,7 @@ jobs:
     executor: node/default
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: yarn # Specify the package manager
+      - run: yarn install -y # Use npm install instead of npm ci
       # Run optional required steps before releasing
       # - run: npm run build-script
       - run: npx semantic-release
@@ -24,4 +23,4 @@ workflows:
                 - 20.14.0
       - release:
           requires:
-            - node/test 
+            - node/test
