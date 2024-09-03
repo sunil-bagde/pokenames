@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
       - node/install-packages:
-          pkg-manager: npm # Specify the package manager
+          pkg-manager: yarn # Specify the package manager
       # Run optional required steps before releasing
       # - run: npm run build-script
       - run: npx semantic-release
