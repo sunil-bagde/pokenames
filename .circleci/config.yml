@@ -7,9 +7,9 @@ jobs:
     executor: node/default
     steps:
       - checkout
-      - run: yarn install -y # Use npm install instead of npm ci
+      - run: yarn install --frozen-lockfile # Use yarn install with frozen lockfile to ensure consistency
       # Run optional required steps before releasing
-      # - run: npm run build-script
+      # - run: yarn run build-script
       - run: npx semantic-release
 
 workflows:
