@@ -19,5 +19,5 @@ workflows:
           # Relevant tags can be found on the CircleCI Developer Hub
           # https://circleci.com/developer/images/image/cimg/node
           version: '20.14.0'
-          # If you are using yarn, change the line below from "npm" to "yarn"
+          # If you are using yarn, change the line below from "npm" to "yarn" yarn
           pkg-manager: yarn
