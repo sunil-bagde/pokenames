@@ -9,7 +9,7 @@
     "url": "https://github.com/sunil-bagde/pokenames.git"
   },
   "scripts": {
-    "test": "",
+    "test": "jest",
     "semantic-release": "semantic-release"
   },
   "author": "Sunil Bagde <bagdesunil786@gmail.com> (https://sunil-bagde.github.io)",
@@ -19,7 +19,8 @@
     "unique-random-array": "4.0.0"
   },
   "devDependencies": {
-    "semantic-release-cli": "5.4.6",
-    "semantic-release": "^24.1.0"
+    "jest": "29.7.0",
+    "semantic-release": "^24.1.0",
+    "semantic-release-cli": "5.4.6"
   }
 }
