@@ -4,6 +4,7 @@ orbs:
 jobs:
   release:
     executor: node/default
+
     steps:
       - checkout
       - node/install-packages # Install and automatically cache packages
@@ -13,6 +14,7 @@ jobs:
 
 workflows:
   test_and_release:
+ 
     # Run the test jobs first, then the release only when all the test jobs are successful
     jobs:
       - node/test:
@@ -20,6 +22,7 @@ workflows:
             parameters:
               version:
                 - 16.1.0
+          pkg-manager: yarn
       - release:
           requires:
             - node/test
