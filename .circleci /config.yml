@@ -3,18 +3,36 @@ version: 2.1
 orbs:
   node: circleci/node@5.2
 
-# Orchestrate jobs using workflows
+jobs:
+  test:
+    docker:
+      - image: cimg/node:20.14.0
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Run Tests
+          command: yarn test
+
+  release:
+    docker:
+      - image: cimg/node:20.14.0
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Install semantic-release
+          command: yarn add semantic-release --dev
+      - run:
+          name: Run semantic-release
+          command: npx semantic-release
 
 workflows:
-  pokename-workflows:
-    # jobs you want to run.
+  sample:
     jobs:
-      - node/test:
-          version: "20.14.0"
-          pkg-manager: yarn
-     - release:
-        executor: node/default
-        steps:
-          - checkout
-          - run: npm install
-          - run: npx semantic-release
+      - test
+      - release:
+          requires:
+            - test
