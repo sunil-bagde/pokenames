@@ -1,4 +1,4 @@
-import pokeName from "./pokename.json" assert { type: "json" };
+import pokeName from "./pokename.json"
 
 import uniqueRandomArray from "unique-random-array";
 
