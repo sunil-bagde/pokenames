@@ -1,0 +1,52 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.2
+
+jobs:
+  test:
+    docker:
+      - image: cimg/node:20.14.0
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Run Tests
+          command: yarn test
+
+  build:
+    docker:
+      - image: cimg/node:20.14.0
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Build Project
+          command: yarn build
+
+  release:
+    docker:
+      - image: cimg/node:20.14.0
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Install semantic-release
+          command: yarn add semantic-release --dev
+      - run:
+          name: Run semantic-release
+          command: npx semantic-release
+
+workflows:
+  sample:
+    jobs:
+      - test
+      - build:
+          requires:
+            - test
+      - release:
+          requires:
+            - build
