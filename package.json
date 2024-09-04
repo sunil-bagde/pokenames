@@ -9,6 +9,7 @@
     "url": "https://github.com/sunil-bagde/pokenames.git"
   },
   "scripts": {
+    "prepare": "yarn build",
     "test": "jest",
     "semantic-release": "semantic-release",
     "prebuild": "rimraf dist",
