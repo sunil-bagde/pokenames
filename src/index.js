@@ -1,12 +1,14 @@
-const pokeName = require("./pokename.json");
+import pokeName from "./pokename.json";
 
-module.exports = {
-  pokeName,
-  random
-};
-function random() {
+export const random = () => {
   return pokeName[randomInteger(0, pokeName.length)];
-}
-function randomInteger(minimum, maximum) {
-	return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-}
+};
+
+export const randomInteger = (minimum, maximum) => {
+  return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+};
+
+export default {
+  pokeName,
+  random,
+};
