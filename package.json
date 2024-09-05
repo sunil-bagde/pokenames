@@ -3,7 +3,6 @@
   "version": "0.0.0-development",
   "description": "Get pokemon name",
   "main": "dist/index.js",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/sunil-bagde/pokenames.git"
