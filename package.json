@@ -12,7 +12,8 @@
     "test": "jest",
     "semantic-release": "semantic-release",
     "prebuild": "rimraf dist",
-    "build": "babel --copy-files --no-copy-ignored src --out-dir dist  --ignore 'src/**/*.spec.js','src/**/*.test.js' "
+    "build": "babel --copy-files --no-copy-ignored src --out-dir dist --ignore 'src/**/*.spec.js','src/**/*.test.js'",
+    "build:browser": "cross-env BABEL_ENV=browser babel --copy-files --no-copy-ignored src --out-dir dist --ignore 'src/**/*.spec.js','src/**/*.test.js'"
   },
   "author": "Sunil Bagde <bagdesunil786@gmail.com> (https://sunil-bagde.github.io)",
   "license": "MIT",
@@ -32,6 +33,7 @@
     "@babel/core": "7.25.2",
     "@babel/preset-env": "7.25.4",
     "copyfiles": "2.4.1",
+    "cross-env": "7.0.3",
     "jest": "29.7.0",
     "rimraf": "6.0.1",
     "semantic-release": "^24.1.0",
